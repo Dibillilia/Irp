@@ -1,0 +1,93 @@
+/* Remove default bullets */
+ul, #command-list {
+    list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#command-list {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
+
+/* ------------------ my stuff --------------- */
+
+.draggable{
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff18e;
+    border-radius: 5px;
+    margin: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#structure * .draggable{
+    background-color: #ffb667;
+}
+
+#content * .draggable{
+    background-color: #ff7d85;
+}
+
+#question * .draggable{
+    background-color: #b78dff;
+}
+
+#actions * .draggable{
+    background-color: #74ff75;
+}
+
+.draggable:hover{
+    box-shadow: 0 0 300px inset rgba(0,0,0,.2)
+}
+
+.ordering{
+    background-color: #ff8863 !important;
+}
+.matching{
+    background-color: #ff6574 !important;
+}
+.multchoice{
+    background-color: #ff5eb3 !important;
+}
+.truefalse{
+    background-color: #e671ff !important;
+}
+
+.selected{
+    /*text-decoration: underline;*/
+    box-shadow: 0 0 0 3px black, 0 0 300px inset rgba(255,255,255,.3);
+}
+
+.selected:hover{
+    box-shadow: 0 0 0 3px black, 0 0 300px inset rgba(255,255,255,.2);
+}

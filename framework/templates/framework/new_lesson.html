@@ -1,0 +1,11 @@
+{% extends 'framework/userbase.html' %}
+
+{% block title %}Dashboard | Irp{% endblock title %}
+
+{% block content %}
+    <form action="{% url 'new lesson' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Lesson Title" autofocus />
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock content %}

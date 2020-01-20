@@ -1,0 +1,18 @@
+{% extends 'framework/userbase.html' %}
+
+{% block title %}Dashboard | Irp{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'new lesson' %}" class="button">New Lesson</a>
+    <br/>
+    <div class="container">
+        <div class="title">
+            Lessons
+        </div>
+        <div class="content">
+            {%  for lesson in lessons %}
+                <div><span>{{lesson.title}}</span> <a href="/">Start Lesson</a> <a href="../edit/{{ lesson.slug }}">Edit Lesson</a></div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 100;
+    background: #323238;
+    box-sizing: border-box;
+}
+
+#nav{
+    display: flex;
+    justify-content: start;
+    color: white;
+    position: relative;
+    left: .66vw;
+    width: 99.3vw;
+}
+
+#nav span{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    user-select: none;
+}
+
+#nav span:hover{
+    background-color: #fff18e;
+    color: #323238;
+    cursor: pointer;
+}
+
+#nav span:active{
+    text-decoration: underline;
+}
+
+#wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#input{
+    width: calc(32vw + 10vw)
+}
+
+.inset{
+    background: white;
+    border-radius: 23px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px black;
+}
+
+.column {
+    width: calc(32vw - 5vw);
+    height: calc(100vh - 60px - .66vw);
+}
+
+.column-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#recent-commands{
+    height: calc(40vh - 60px - .66vw);
+}
+
+#all-commands{
+    height: calc(60vh - 1vw);
+}
+
+#metadata{
+    height: calc(33vh - 60px - .66vw);
+}
+
+#output{
+    height: calc(43vh - 1vw);
+}
+
+#json{
+    height: calc(24vh - 1vw);
+}
+
+#command-list-wrapper{
+    padding: .66vw;
+    overflow: auto;
+    height: calc(100% - 1em - 15px);
+}
+
+#code-wrapper{
+    height: calc(100vh - 60px - .66vw - 15px - .7em);
+    overflow: auto;
+}
+
+.inset-title{
+    width: 100%;
+    text-align: center;
+    background: #fff18e;
+    padding: 5px 0px 5px 0px;
+    font-size: .7em;
+    cursor: default;
+    user-select: none;
+    color: #323238;
+}
+
+.question-info{
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+
+.question-info input[type=text]{
+    width: calc(100% - 5px);
+    border-radius: 5px;
+    display: inline-block;
+    font-size: inherit;
+    font-family: sans-serif;
+}
+
+.question-info textarea{
+    width: calc(100% - 5px);
+    border-radius: 5px;
+    display: inline-block;
+    font-size: inherit;
+    font-family: sans-serif;
+}
+
+.question-info input[type=number]{
+    width: 50px;
+}

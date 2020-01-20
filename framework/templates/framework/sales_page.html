@@ -1,0 +1,17 @@
+{% extends 'framework/base.html' %}
+
+{% block title %}Irp{% endblock title %}
+
+{% block content %}
+    <h1>Interactive Realtime Powerpoints</h1>
+    <h2>These are all the reasons you should be using irp in your classroom: </h2>
+    <h3>Monitor Attention</h3>
+    <h3>Instant Feedback</h3>
+    <h3>Automatic Grading</h3>
+    <h3>Powerful Group Assignment</h3>
+    <h3>Powerful Voting Systems</h3>
+    <h3>Fast, Versatile Lesson Editor</h3>
+    <h2>Ready to join?</h2>
+    <a href="{% url 'register' %}">Register</a>
+    <a href="/accounts/login/?next=/dashboard/">Log In</a>
+{% endblock content %}

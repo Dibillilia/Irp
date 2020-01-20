@@ -1,0 +1,17 @@
+{% extends 'framework/base.html' %}
+
+{% block title %}Irp{% endblock title %}
+
+{% block content %}
+    <form action="{% url 'create user' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="password" placeholder="password">
+        <input type="text" name="password2" placeholder="confirm password">
+        <br/>
+        <textarea name="description" placeholder="Please describe yourself."></textarea>
+        <br/>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}
