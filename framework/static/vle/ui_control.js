@@ -1,4 +1,3 @@
-
 selectedText = ""; //variable to store currently selected command
 selectedColor = "white"; //variable to store color of selected command
 $(".draggable").click(function () { //function to handle selecting command
@@ -113,12 +112,17 @@ codeWrapper.on("click", ".fa-ghost", function (event) {
     event.stopPropagation();
 });
 
-codeWrapper.on("click", ".codeBlock", function (event){
+codeWrapper.on("click", ".codeBlock", function (event) {
     event.stopPropagation();
     updateSerialization();
 });
 
-$("#save").click(function() {
-    let html = $("code-wrapper").html();
-    alert(html);
+$("#save").click(function () {
+    let html = $("#code-wrapper").html();
+    $.ajax({
+        type: "POST",
+        url: "/save_lesson",
+        data: html,
+        dataType: "string"
+    });
 });

@@ -11,4 +11,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('new_lesson/', views.new_lesson, name='new lesson'),
     path('edit/<slug:lesson_slug>', views.edit, name='edit lesson'),
+    path('save_lesson/<slug:lesson_slug>', views.save_lesson, name='save lesson'),
 ]
