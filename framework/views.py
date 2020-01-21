@@ -51,6 +51,7 @@ def dashboard(request):
     lessons = Lesson.objects.filter(user=request.user)
     return render(request, 'framework/dashboard.html', {"username": request.user.username, "lessons": lessons})
 
+@login_required(login_url='/accounts/login/')
 def new_lesson(request):
     if request.method == "GET":
         return render(request, 'framework/new_lesson.html', {"username": request.user.username})
@@ -65,6 +66,16 @@ def new_lesson(request):
         lesson.save()
         return redirect(dashboard)
 
+@login_required(login_url='/accounts/login/')
 def edit(request, lesson_slug):
     lesson = Lesson.objects.get(user=request.user, slug=lesson_slug)
     return render(request, 'vle/index.html', {'html': lesson.html})
+
+@login_required(login_url='/accounts/login/')
+def save_lesson(request, lesson_slug):
+    lesson = Lesson.objects.get(user=request.user, slug=lesson_slug)
+    print(lesson)
+    lesson.html = request.POST["html"]
+    print(lesson.html)
+    lesson.save()
+    return HttpResponse("lesson saved successfully")
